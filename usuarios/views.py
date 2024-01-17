@@ -19,7 +19,7 @@ def cadastro(request):
         
         user = User.objects.filter(username=username)
         if user.exists():
-            messages.add_message(request, constants.ERROR, 'Este Usuário já existe. Cadastre outro melhor nome!')
+            messages.add_message(request, constants.ERROR, 'Este Usuário já existe. Cadastre outro nome!')
             return redirect('/usuarios/cadastro')
         
         try:
