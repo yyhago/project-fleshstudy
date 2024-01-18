@@ -91,7 +91,7 @@
       <br />
 
       {% for flash in flashcards %}
-      <div class="box-new-flashcard">
+      <div class="box-new-flashcard" onclick="flip_card({{flash.id}})">
         <div class="flashcard">
           <div class="flashcard-categoria">{{flash.categoria}}</div>
           <a href=""><i class="icone-exit bx bx-x-circle"></i></a>
@@ -101,7 +101,7 @@
             <p class="flashcard-item">{{flash.pergunta}}</p>
           </div>
         </div>
-        <div class="resposta-flashcard">{{flash.resposta}}</div>
+        <div class="resposta-flashcard" id="{{flash.id}}">{{flash.resposta}}</div><hr>
       </div>
       {% endfor %}
       <br />
@@ -109,5 +109,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  function flip_card(id){
+        card = document.getElementById(id)
+        if(card.style.display == 'none' || card.style.display == ''){
+          card.style.display = 'block'
+        }
+  }
+</script>
 
 {% endblock 'conteudo' %}
