@@ -94,7 +94,7 @@
       <div class="box-new-flashcard" onclick="flip_card({{flash.id}})">
         <div class="flashcard">
           <div class="flashcard-categoria">{{flash.categoria}}</div>
-          <a href=""><i class="icone-exit bx bx-x-circle"></i></a>
+          <a href="{% url 'deletar_flashcard' flash.id %}"><i class="icone-exit bx bx-x-circle"></i></a>
           <br />
           <br />
           <div class="flashcard-box-item">
@@ -115,6 +115,8 @@
         card = document.getElementById(id)
         if(card.style.display == 'none' || card.style.display == ''){
           card.style.display = 'block'
+        }else{
+          card.style.display == 'none'
         }
   }
 </script>

@@ -46,3 +46,10 @@ def novo_flashcard(request):
     request, constants.SUCCESS, 'Flashcard criado com sucesso'
     )
     return redirect('/flashcard/novo_flashcard')
+  
+def deletar_flashcard(request, id):
+  flashcard = Flashcard.objects.get(id=id)
+  flashcard.delete()
+  messages.add_message(request, constants.SUCCESS, 'Seu FlashCard foi deletado com Sucesso!')
+
+  return redirect('/flashcard/novo_flashcard/')
