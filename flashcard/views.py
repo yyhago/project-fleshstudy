@@ -87,4 +87,13 @@ def iniciar_desafio(request):
 
     flashcards = flashcards[: int(qtd_perguntas)]
 
+    for f in flashcards:
+      flashcard_desafio = FlashcardDesafio(
+         flashcard=f
+      )
+      flashcard_desafio.save()
+      desafio.flashcards.add(flashcard_desafio)
+
+    desafio.save()
+
     return HttpResponse("Teste")
