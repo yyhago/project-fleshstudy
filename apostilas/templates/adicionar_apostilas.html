@@ -57,7 +57,7 @@
                         {% for apostila in apostilas %}
                             <tr class="linha">
                                 <td>{{apostila.titulo}}</td>
-                                <td><a href="" style="color: black; text-decoration: none;" class="btn-cadastro">Abrir</a></td>
+                                <td><a href="{% url 'apostila' apostila.id %}" style="color: black; text-decoration: none;" class="btn-cadastro">Abrir</a></td>
                             </tr>
                         {% endfor %}
                         
@@ -65,7 +65,7 @@
                   </table>
                   <hr>
                   <p class="fonte-secundaria">Views totais: {{view_totais}}</p>
-            </div>
+            </div> 
         </div>
     </div>
 {% endblock 'conteudo' %}

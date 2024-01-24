@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.messages import constants
 from django.contrib import messages
@@ -45,7 +44,7 @@ def logar(request):
         if user:
             auth.login(request, user)
             messages.add_message(request, constants.SUCCESS, 'Parabéns! Conta Logada com Sucesso.')
-            return redirect('/fleshstudy/novo_fleshstudy/')
+            return redirect('/flashcard/novo_flashcard/')
         else:
             messages.add_message(request, constants.ERROR, 'Username ou Senha errado! Por favor, tente novamente.')
             return redirect('/usuarios/logar/')
